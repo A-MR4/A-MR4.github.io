@@ -6,12 +6,12 @@
     <title>Lista de Actividades</title>
 </head>
 <body>
-    <button id="btnCargar">Cargar contenido</button>
+    <button id="btnCargar">Tarea Bootstrap</button>
 
     <div id="Bootstrap"></div>
     <script>
         document.getElementById("btnCargar").addEventListener("click", function() {
-            fetch("Bootstrap/Bootstrap.html") // Archivo HTML que quieres cargar
+            fetch("Bootstrap/Bootstrap.html")
                 .then(response => {
                     if (!response.ok) throw new Error("Error al cargar el HTML");
                     return response.text();
@@ -28,3 +28,4 @@
 </body>
 </html>
 </html>
+
