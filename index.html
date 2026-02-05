@@ -6,17 +6,25 @@
     <title>Lista de Actividades</title>
 </head>
 <body>
+    <button id="btnCargar">Cargar contenido</button>
+
     <div id="Bootstrap"></div>
     <script>
-        fetch("Bootstrap/Bootstrap.html")
-            .then(response => {
-                if (!response.ok) throw new Error("Error al cargar el HTML");
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById("Bootstrap").innerHTML = data;
-            })
-            .catch(error => console.error(error));
+        document.getElementById("btnCargar").addEventListener("click", function() {
+            fetch("Bootstrap/Bootstrap.html") // Archivo HTML que quieres cargar
+                .then(response => {
+                    if (!response.ok) throw new Error("Error al cargar el HTML");
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById("Bootstrap").innerHTML = data;
+                })
+                .catch(error => {
+                    document.getElementById("Bootstrap").innerHTML = "<p style='color:red;'>No se pudo cargar el contenido.</p>";
+                    console.error(error);
+                });
+        });
     </script>
 </body>
+</html>
 </html>
