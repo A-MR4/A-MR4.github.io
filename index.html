@@ -6,39 +6,11 @@
     <title>Lista de Actividades</title>
 </head>
 <body>
-    <button id="t_boot">Tarea Bootrap</button>
-    <button id="t_juegoAdivina">Tarea Juego</button>
-    <div id="Bootstrap"></div>
-    <div id="juego"></div>
-    <script>
-        document.getElementById("t_boot").addEventListener("click", function() {
-            fetch("Bootstrap/Bootstrap.html")
-                .then(response => {
-                    if (!response.ok) throw new Error("Error al cargar el HTML");
-                    return response.text();
-                })
-                .then(data => {
-                    document.getElementById("Bootstrap").innerHTML = data;
-                })
-                .catch(error => {
-                    document.getElementById("Bootstrap").innerHTML = "<p style='color:red;'>No se pudo cargar el contenido.</p>";
-                    console.error(error);
-                });
-        });
-        document.getElementById("t_juegoAdivina").addEventListener("click", function() {
-            fetch("Juego/juego.html")
-                .then(response => {
-                    if (!response.ok) throw new Error("Error al cargar el HTML");
-                    return response.text();
-                })
-                .then(data => {
-                    document.getElementById("juego").innerHTML = data;
-                })
-                .catch(error => {
-                    document.getElementById("juego").innerHTML = "<p style='color:red;'>No se pudo cargar el contenido.</p>";
-                    console.error(error);
-                });
-        });
-    </script>
+    <nav>
+        <a href="index.html">Todas las tareas</a>
+        <a href="Bootstrap/bootstrap.html">Tarea Bootstrap</a>
+        <a href="Juego/juego.html">Tarea Juego</a>
+    </nav>
 </body>
+
 
